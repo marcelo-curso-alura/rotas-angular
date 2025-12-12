@@ -3,16 +3,16 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { ListaPostagemComponent } from './lista-postagem.component';
 
-const routes: Routes = [
+const rotas: Routes = [
   {
-     path: "", component: ListaPostagemComponent
+    path: "", component: ListaPostagemComponent
   }
-];
+]
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule, RouterModule.forChild(routes)
+    CommonModule, RouterModule.forChild(rotas)
   ]
 })
 export class ListaPostagemModule { }

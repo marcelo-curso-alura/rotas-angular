@@ -15,16 +15,14 @@ import { Router } from '@angular/router';
 export class ListaPostagemComponent implements OnInit {
   posts: Postagem[] = [];
 
-  constructor(
-    private router: Router
-  ) {}
-
   ngOnInit() {
     this.posts = data.posts
   }
 
-  goToPost(postId: string) {
-    this.router.navigate(['/posts',postId]);
+  constructor(private router: Router) {}
+
+  vaParaOPost(postId: string) {
+    this.router.navigate(["/posts", postId]);
   }
 
 }
