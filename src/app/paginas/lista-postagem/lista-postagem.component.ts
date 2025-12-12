@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import * as data from '../../db.json'; 
 import { Postagem } from '../../models/post.model'; 
 import { CartaoPostagemComponent } from '../../componentes/cartao-postagem/cartao-postagem.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lista-postagem',
@@ -14,8 +15,16 @@ import { CartaoPostagemComponent } from '../../componentes/cartao-postagem/carta
 export class ListaPostagemComponent implements OnInit {
   posts: Postagem[] = [];
 
+  constructor(
+    private router: Router
+  ) {}
+
   ngOnInit() {
     this.posts = data.posts
+  }
+
+  goToPost(postId: string) {
+    this.router.navigate(['/posts',postId]);
   }
 
 }
